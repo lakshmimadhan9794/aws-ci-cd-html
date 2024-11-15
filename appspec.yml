@@ -4,4 +4,6 @@ phases:
   build:
     commands:
       - echo Build part is success
-     
+  artifacts:
+  files:
+      - '**/*'   

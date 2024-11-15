@@ -1,9 +1,18 @@
-version: 0.2
-
-phases:
-  build:
-    commands:
-      - echo Build part is success
-  artifacts:
-  files:
-      - '**/*'   
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /Yar/www/html
+hooks:
+  BeforeInstall:
+    - location: Scripts/install_dependencies
+      timeout: 300
+      runas: rrot
+    - location: Scripts/scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop
+    - location: Scripts/stop_server
+      timeout: 300
+      runas: root
+  
